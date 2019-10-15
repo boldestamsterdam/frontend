@@ -299,7 +299,9 @@ form.zoekenactive {
     grid-row-end: 4;
         
     }
-
+#nieuws article.voorpagina h3 {
+        font-size: 5vw;
+    }
 }
 
 
@@ -322,6 +324,9 @@ form.zoekenactive {
     grid-row-end: 2;
         
     }
+#nieuws article.voorpagina h3 {
+        font-size: 4vw;
+    }
 }
 
 
@@ -337,6 +342,9 @@ form.zoekenactive {
     grid-row-start: 1;
     grid-row-end: 3;
 }
+  #nieuws article.voorpagina h3 {
+        font-size: 2.5em;
+    }  
 #nieuws div {
         grid-column-start: 4;
     grid-column-end: 5;
