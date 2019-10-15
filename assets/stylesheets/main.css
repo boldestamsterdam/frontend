@@ -37,6 +37,7 @@ body {
 }
 
 #header nav.scrollnav {
+    overflow-y: hidden;
     overflow-x: scroll;
     grid-column-start: 1;
     grid-column-end: 4;
