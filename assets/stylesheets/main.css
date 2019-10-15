@@ -11,12 +11,12 @@
 
 @font-face {
     font-family: "bentonsansblack";
-    src: url("/assets/fonts/BentonSansBlack.woff2") format('woff2');
+    src: url("assets/fonts/BentonSansBlack.woff2") format('woff2');
 }
 
 @font-face {
     font-family: "bentonsansbold";
-    src: url("/assets/fonts/BentonSansBold.woff2") format('woff2');
+    src: url("assets/fonts/BentonSansBold.woff2") format('woff2');
 }
 
 body {
