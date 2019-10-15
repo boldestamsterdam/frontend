@@ -1,27 +1,23 @@
+var distance = $('.scrollnav').offset().top;
 
-// live zoeken
-jQuery(document).ready(function($){
-
-$('.live-search-list li').each(function(){
-$(this).attr('data-search-term', $(this).text().toLowerCase());
+$(window).scroll(function () {
+    if ($(this).scrollTop() >= distance) {
+        $('nav.scrollnav').addClass('fixednav');
+        $("main").css("margin-top", "53px");
+    } else {
+        $('nav.scrollnav').removeClass('fixednav');
+        $("main").css("margin-top", "0");
+    }
 });
 
-$('.live-search-box').on('keyup', function(){
 
-var searchTerm = $(this).val().toLowerCase();
+// https://stackoverflow.com/questions/7543718/test-in-jquery-if-an-element-is-at-the-top-of-screen
 
-    $('.live-search-list li').each(function(){
 
-        if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
-            $(this).show();
-        } else {
-            $(this).hide();
-        }
+$("nav .zoeken").click(function(){
+ $("form.zoeken").toggleClass("zoekenactive");
+     $("#header article").toggleClass("zoekenactive");
+     $("form input").focus();
 
-    });
 
 });
-
-});
-
-// bron: https://codepen.io/html5andblog/pen/RPewBx

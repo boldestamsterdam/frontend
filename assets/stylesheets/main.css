@@ -1,117 +1,360 @@
-/* fonts */
-@import url('https://fonts.googleapis.com/css?family=Crimson+Text:400,400i,600,600i,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap');
 
+@font-face {
+    font-family: "capitolium";
+    src: url("/assets/fonts/CapitoliumHeadLight.woff2") format('woff2');
+}
 
+@font-face {
+    font-family: "capitoliumhead";
+    src: url("/assets/fonts/CapitoliumHeadBold.ttf") format('truetype');
+}
 
-/* eigen code */
+@font-face {
+    font-family: "bentonsansblack";
+    src: url("/assets/fonts/BentonSansBlack.woff2") format('woff2');
+}
+
+@font-face {
+    font-family: "bentonsansbold";
+    src: url("/assets/fonts/BentonSansBold.woff2") format('woff2');
+}
+
 body {
-    font-family: 'Lato', sans-serif;
+    font-family: 'capitolium', serif;
+    font-weight: 100;
     margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
-ul {
-    padding: 0;
+#header {
+    max-width: 1170px;
+    margin: auto;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 200px;
 }
-li {
+
+#header nav.scrollnav {
+    overflow-x: scroll;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border-bottom: 1px solid #eaeaea;
+    border-top: 1px solid #eaeaea;
+}
+#header nav.scrollnav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    padding: 1em 0;
+    margin: 0;
+    padding: 15px;
+}
+#header nav.scrollnav li {
     list-style: none;
+    margin-right: 2.5em;
 }
-p {
-    font-family: 'Crimson Text', serif;
+#header nav.scrollnav li:last-of-type {
+    margin-right: 0em;
 }
+#header nav.scrollnav li a {
+    color: #727272;
+}
+#header nav.scrollnav li:first-of-type a {
+    border-bottom: 4px solid #000;
+    padding-bottom: 14px;
+    color: #000;
+}
+#header nav.scrollnav li:hover a {
+   
+    color: #000;
+}
+#header article.zoekenactive {
+    opacity: 0;
+}
+
+#header article {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    opacity: 1;
+    transition: .5s opacity;
+}
+#header article b {
+    font-family: bentonsansbold;
+    text-transform: uppercase;
+    margin-left: 0.5em;
+    font-size: 0.9em;
+}
+#header article img {
+    height: 80px;
+    margin-top: 10px;
+}
+
+/* iconen navigatie rechtsboven */
+nav.iconennavigatie ul {
+    padding: 0;
+    display: flex;
+    list-style: none;
+    margin: 15px;
+        justify-content: flex-end;
+    
+}
+nav.iconennavigatie svg {
+    display: block;
+    margin: auto;
+    height: 30px;
+    
+}
+nav.iconennavigatie li:nth-of-type(2) {
+    margin: 0 1em;
+}
+svg.app-brand-logo {
+    padding: 15px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+section img{
+    width: 100%;
+}
+
+main {
+    max-width: 1170px;
+    margin: auto;
+}
+
+/* typografie */
 a {
     color: inherit;
     text-decoration: none;
 }
-
-/* header */
-header.topheader {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    top: 0;
-    width: 100%;
-    background: #fff;
-    height: 100px;
-
+main a:hover {
+    text-decoration: underline;
+}
+h1, h2, h3, h4 {
+    font-weight: normal;
 }
 
-.logosmall {
-    margin-right: 1em;
+/* nieuws */
+#nieuws {
+    display: block;
 }
-.logobig {
-    margin-right: 2em;
+
+#nieuws article {
+    margin: 15px;
+    position: relative;
 }
-.social {
+
+#nieuws article.voorpagina a {
+    background-image: linear-gradient(to top,rgba(0, 0, 0, .5),rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    left: 0;
+    color: #fff;
+    padding: 15px 15px 15px 15px;
+
+}
+#nieuws article.voorpagina h4 {
+    font-family: bentonsansbold;
+    margin: 0;
     text-transform: uppercase;
-    font-size: 0.65em;
-    letter-spacing: 1px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-}
-.social img {
-    width: 20px;
-    height: 20px;
-    margin-left: 0.5em;
-}
-
-
-
-
-/* main */
-main {
-    margin-top: 100px;;
-}
-
-main article img {
-    width: 100%;
-}
-
-/* aside */
-aside {
-    margin-top: 100px;
-}
-/* zoekbalk */
-.live-search-box {
-    width: 100%;
     font-size: 1rem;
-    font-weight: 100;
-    font-family: 'Lato', sans-serif;
-    background-color: #000;
-    color: #000;
+    
+}
+.voorpagina img {
+    height: 100%;
+    object-fit: cover;
+}
+#nieuws article.voorpagina h3 {
+
+ font-size: 2em;
+    font-family: capitoliumhead;
+    margin: 0;
+}
+.nieuwslijst {
+    position: relative;
+}
+.nieuwslijst > a {
+    position: absolute;
+    right: 15px;
+    top: 30px;
+    font-family: bentonsansbold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+.nieuwslijst h3 {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 1em;
+}
+.nieuwslijst article:last-of-type h3 {
     border: none;
-    padding: 1em;
-    padding-left: 2.75em;
-    box-sizing: border-box;
-    background-image: url(assets/images/icons/zoek.svg);
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: 0.75em 1em;
-    color: #fff;
+    padding: 0;
+    margin-bottom: 0;
 }
-.live-search-box:focus {
-    outline: none;
+.nieuwslijst h2 {
+    border-top: 4px solid #008bc3;
+    font-family: bentonsansbold;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    padding-top: 5px;
+    margin: 15px;
 }
-.live-search-box:focus::placeholder {
-    opacity: 0.5;
+
+/* grote nieuwsberichten */
+.nieuwsberichtgroot h3 {
+    font-family: capitoliumhead;
+    font-size: 1.25em;
+    margin: 0;
 }
-.live-search-box::placeholder {
-    color: #fff;
+.nieuwsberichtgroot h4 {
+    font-size: 0.75rem;
+    font-family: bentonsansbold;
+    text-transform: uppercase;
+    margin: 0.5em 0 0.75em 0;
 }
 
 
-/* mediaquery */
 @media only screen and (min-width: 600px) {
-    body {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
+#nieuws {
+    display: grid;
+      grid-template-columns: 1fr 1fr;
+  grid-template-rows: 2fr 1fr 1fr;
+}
+#nieuws > article:first-of-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+    #nieuws div {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+        
     }
-    aside {
-        grid-row: 1 / 3;
-    }
-    main {
-        grid-row: 2 / 3;
+
+}
+
+
+@media only screen and (min-width: 900px) {
+#nieuws {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#nieuws article:first-of-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+#nieuws div {
+        grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+        
     }
 }
 
 
+@media only screen and (min-width: 1200px) {
+#nieuws {
+    display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+#nieuws article:first-of-type {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+#nieuws div {
+        grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+        
+    }
+}
+
+@media only screen and (max-width: 700px) {
+#header {
+    grid-template-rows: auto auto auto;
+}
+#header nav.scrollnav {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+#header article {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    border-bottom: 1px solid #eaeaea;
+    justify-content: center;
+    
+}
+svg.app-brand-logo {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+#header article img {
+    height: 50px;
+    }
+}
+
+
+
+
+/* animaties */
+.scrollnav.fixednav {
+    position: fixed;
+    z-index: 10;
+    background: #fff;
+    width: 100vw;
+}
+
+/* zoeken */
+
+
+form.zoeken {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    background: #fff;
+    height: 90px;
+    display: flex;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-left: auto;
+    z-index: 2;
+}
+form input {
+    width: 100%;
+    outline: none !important;
+    padding: 15px;
+    font-size: 1.5em;
+    font-family: inherit;
+    border: none;
+}
+form.zoekenactive {
+    cursor: auto;
+    width: 100%;
+}
+
+.zoeken {
+    cursor: pointer;
+    transition: .5s;
+}
+.zoekenactive {
+    cursor: auto;
+}
