@@ -1,12 +1,12 @@
 
 @font-face {
     font-family: "capitolium";
-    src: url("/assets/fonts/CapitoliumHeadLight.woff2") format('woff2');
+    src: url("assets/fonts/CapitoliumHeadLight.woff2") format('woff2');
 }
 
 @font-face {
     font-family: "capitoliumhead";
-    src: url("/assets/fonts/CapitoliumHeadBold.ttf") format('truetype');
+    src: url("assets/fonts/CapitoliumHeadBold.ttf") format('truetype');
 }
 
 @font-face {
