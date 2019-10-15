@@ -224,6 +224,61 @@ h1, h2, h3, h4 {
 }
 
 
+
+
+
+
+
+/* animaties */
+.scrollnav.fixednav {
+    position: fixed;
+    z-index: 10;
+    background: #fff;
+    width: 100vw;
+}
+
+/* zoeken */
+
+
+form.zoeken {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    background: #fff;
+    height: 90px;
+    display: flex;
+    width: 0;
+    overflow: hidden;
+    transition: 0.5s;
+    margin-left: auto;
+    z-index: 2;
+}
+form input {
+    width: 100%;
+    outline: none !important;
+    padding: 15px;
+    font-size: 1.5em;
+    font-family: inherit;
+    border: none;
+}
+form.zoekenactive {
+    cursor: auto;
+    width: 100%;
+}
+
+.zoeken {
+    cursor: pointer;
+    transition: .5s;
+}
+.zoekenactive {
+    cursor: auto;
+}
+
+
+
+
+/* responsive */
+
 @media only screen and (min-width: 600px) {
 #nieuws {
     display: grid;
@@ -304,9 +359,16 @@ h1, h2, h3, h4 {
     grid-column-start: 1;
     grid-column-end: 4;
     border-bottom: 1px solid #eaeaea;
-    justify-content: center;
-    
+    justify-content: center;  
 }
+form.zoeken {
+    grid-column-start: 1;
+    grid-column-end: 4;
+        height: auto;
+    border-bottom: 1px solid #eaeaea;
+height: 61px;
+    }
+
 svg.app-brand-logo {
     grid-column-start: 1;
     grid-column-end: 3;
@@ -316,50 +378,3 @@ svg.app-brand-logo {
     }
 }
 
-
-
-
-/* animaties */
-.scrollnav.fixednav {
-    position: fixed;
-    z-index: 10;
-    background: #fff;
-    width: 100vw;
-}
-
-/* zoeken */
-
-
-form.zoeken {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    background: #fff;
-    height: 90px;
-    display: flex;
-    width: 0;
-    overflow: hidden;
-    transition: 0.5s;
-    margin-left: auto;
-    z-index: 2;
-}
-form input {
-    width: 100%;
-    outline: none !important;
-    padding: 15px;
-    font-size: 1.5em;
-    font-family: inherit;
-    border: none;
-}
-form.zoekenactive {
-    cursor: auto;
-    width: 100%;
-}
-
-.zoeken {
-    cursor: pointer;
-    transition: .5s;
-}
-.zoekenactive {
-    cursor: auto;
-}
