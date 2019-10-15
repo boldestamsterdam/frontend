@@ -1,22 +1,22 @@
 
 @font-face {
     font-family: "capitolium";
-    src: url("assets/fonts/CapitoliumHeadLight.woff2") format('woff2');
+    src: url("../../assets/fonts/CapitoliumHeadLight.woff2") format('woff2');
 }
 
 @font-face {
     font-family: "capitoliumhead";
-    src: url("assets/fonts/CapitoliumHeadBold.ttf") format('truetype');
+    src: url("../../assets/fonts/CapitoliumHeadBold.ttf") format('truetype');
 }
 
 @font-face {
     font-family: "bentonsansblack";
-    src: url("assets/fonts/BentonSansBlack.woff2") format('woff2');
+    src: url("../../assets/fonts/BentonSansBlack.woff2") format('woff2');
 }
 
 @font-face {
     font-family: "bentonsansbold";
-    src: url("assets/fonts/BentonSansBold.woff2") format('woff2');
+    src: url("../../assets/fonts/BentonSansBold.woff2") format('woff2');
 }
 
 body {
