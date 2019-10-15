@@ -178,7 +178,7 @@ h1, h2, h3, h4 {
 }
 #nieuws article.voorpagina h3 {
 
- font-size: 2em;
+ font-size: 5vw;
     font-family: capitoliumhead;
     margin: 0;
 }
@@ -299,9 +299,7 @@ form.zoekenactive {
     grid-row-end: 4;
         
     }
-#nieuws article.voorpagina h3 {
-        font-size: 5vw;
-    }
+
 }
 
 
