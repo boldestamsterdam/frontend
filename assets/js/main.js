@@ -1,35 +1,43 @@
-// header sticky na scroll
-
-var distance = $('.scrollnav').offset().top;
-
-$(window).scroll(function () {
-    // als window verder is gescrollt dan de afstand tussen top en de .scrollnav 
-    if ($(this).scrollTop() >= distance) {
-        $('nav.scrollnav').addClass('fixednav');
-        $("main").css("margin-top", "53px");
-    } else {
-        $('nav.scrollnav').removeClass('fixednav');
-        $("main").css("margin-top", "0");
-    }
-});
-
-// bron: https://stackoverflow.com/questions/7543718/test-in-jquery-if-an-element-is-at-the-top-of-screen
-
 // css animaties starten als er op zoeken icoon geklikt wordt.
+document.querySelector("li.zoeken").onclick = function () {
+    zoekbalkUitklappen()
+};
 
-$("nav .zoeken").click(function () {
-    $("form.zoeken").toggleClass("zoekenactive");
-    $("#header article").toggleClass("zoekenactive");
-    // autofocus op input veld
-    $("form input").focus();
-});
+function zoekbalkUitklappen() {
+    document.querySelector("form.zoeken").classList.add("zoekenactive");
+    document.getElementById("zoeken").focus();
+}
 
 // zoek knop submit laten verschijnen als er getypt word
+document.querySelector("input").onkeydown = function () {
+    zoekKnopNaTypen()
+};
 
-$(".zoeken button").hide();
-  $(".zoeken input").keydown(function(){
-    $(".zoeken button").fadeIn();
-  });
+function zoekKnopNaTypen() {
+    document.querySelector("form button").style.opacity = "1";
+}
+// bron: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_onkeydown_dom
 
-// bron: https://www.w3schools.com/jquery/event_keyup.asp
 
+// fixed header na scroll
+function fixedHeaderNaScroll() {
+    var ypos = window.pageYOffset;
+
+    // als y 90px is gescrolled en de breedte van de browser groter of gelijk aan 700px maak header sticky
+    if (ypos > 90 && window.innerWidth >= 700){
+        document.querySelector("nav.scrollnav").classList.add("fixednav");
+        document.querySelector("main").style.marginTop = "53px";
+    
+    // als y 140px is gescrolled en de breedte van de browser kleiner of gelijk aan 700px maak header sticky
+    } else if (ypos > 140 && window.innerWidth <= 700){
+        document.querySelector("nav.scrollnav").classList.add("fixednav");
+        document.querySelector("main").style.marginTop = "53px";
+
+    }else {
+        document.querySelector("nav.scrollnav").classList.remove("fixednav");
+        document.querySelector("main").style.marginTop = "0";
+    }
+
+}
+
+window.addEventListener("scroll", fixedHeaderNaScroll);

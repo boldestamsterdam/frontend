@@ -389,6 +389,8 @@ form.zoekenactive {
     text-transform: uppercase;
     padding: 8px 12px;
     border-radius: 100px;
+    opacity: 0;
+    transition: .5s;
 }
 
 .zoekenactive {
