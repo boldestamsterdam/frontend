@@ -323,7 +323,7 @@ footer p:last-of-type {
 
 footer p:last-of-type:before {
     content: "";
-    background: url(/assets/images/sigmund-footer.png);
+    background: url("../../assets/images/sigmund-footer.png");
     background-size: contain;
     background-repeat: no-repeat;
     width: 100px;
